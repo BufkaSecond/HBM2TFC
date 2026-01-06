@@ -1,0 +1,108 @@
+---- Minecraft Crash Report ----
+// I'm sorry, Dave.
+
+Time: 11/13/25 9:55 PM
+Description: Ticking block entity
+
+java.lang.VerifyError: Expecting a stackmap frame at branch target 11
+Exception Details:
+  Location:
+    net/minecraft/entity/player/EntityPlayer.moveEntityWithHeading(FF)V @4: ifne
+  Reason:
+    Expected stackmap frame at this location.
+  Bytecode:
+    0x0000000: 2ab8 0753 9a00 070b 440b 452a b401 9a4a
+    0x0000010: 2ab4 019c 3905 2ab4 019e 3907 2ab4 0091
+    0x0000020: b407 5699 003a 2ab4 01a6 c700 332a b402
+    0x0000030: eb39 092a b402 d338 0b2a 2ab4 0091 b607
+    0x0000040: 59b5 02d3 2a23 24b7 075b 2a18 0914 0206
+    0x0000050: 6bb5 02eb 2a17 0bb5 02d3 a700 092a 2324
+    0x0000060: b707 5b2a 2ab4 019a 2967 2ab4 019c 1805
+    0x0000070: 672a b401 9e18 0767 b607 5eb1          
+  Stackmap Table:
+    append_frame(@93,Double,Double,Double)
+    same_frame(@99)
+
+	at net.minecraftforge.common.util.FakePlayerFactory.get(FakePlayerFactory.java:40)
+	at com.hbm.blocks.generic.BlockWandLoot$TileEntityWandLoot.replace(BlockWandLoot.java:286)
+	at com.hbm.blocks.generic.BlockWandLoot$TileEntityWandLoot.updateEntity(BlockWandLoot.java:244)
+	at net.minecraft.world.World.updateEntities(World.java:2160)
+	at net.minecraft.world.WorldServer.updateEntities(WorldServer.java:515)
+	at net.minecraft.server.MinecraftServer.updateTimeLightAndEntities(MinecraftServer.java:703)
+	at net.minecraft.server.MinecraftServer.tick(MinecraftServer.java:614)
+	at net.minecraft.server.integrated.IntegratedServer.tick(IntegratedServer.java:118)
+	at net.minecraft.server.MinecraftServer.run(MinecraftServer.java:485)
+	at net.minecraft.server.MinecraftServer$2.run(MinecraftServer.java:752)
+
+
+A detailed walkthrough of the error, its code path and all known details is as follows:
+---------------------------------------------------------------------------------------
+
+-- Head --
+Stacktrace:
+	at net.minecraftforge.common.util.FakePlayerFactory.get(FakePlayerFactory.java:40)
+	at com.hbm.blocks.generic.BlockWandLoot$TileEntityWandLoot.replace(BlockWandLoot.java:286)
+	at com.hbm.blocks.generic.BlockWandLoot$TileEntityWandLoot.updateEntity(BlockWandLoot.java:244)
+
+-- Block entity being ticked --
+Details:
+	Name: tileentity_wand_loot // com.hbm.blocks.generic.BlockWandLoot.TileEntityWandLoot
+	Block type: ID #54 (tile.chest // net.minecraft.block.BlockChest)
+	Block data value: 5 / 0x5 / 0b0101
+	Block location: World: (571,132,-2121), Chunk: (at 11,8,7 in 35,-133; contains blocks 560,0,-2128 to 575,255,-2113), Region: (1,-5; contains chunks 32,-160 to 63,-129, blocks 512,0,-2560 to 1023,255,-2049)
+	Actual block type: ID #54 (tile.chest // net.minecraft.block.BlockChest)
+	Actual block data value: 5 / 0x5 / 0b0101
+Stacktrace:
+	at net.minecraft.world.World.updateEntities(World.java:2160)
+	at net.minecraft.world.WorldServer.updateEntities(WorldServer.java:515)
+
+-- Affected level --
+Details:
+	Level name: New World
+	All players: 0 total; []
+	Chunk stats: ServerChunkCache: 683 Drop: 0
+	Level seed: 7717325593506831633
+	Level generator: ID 00 - TFCDefault, ver 0. Features enabled: true
+	Level generator options: 
+	Level spawn location: World: (587,145,-2182), Chunk: (at 11,9,10 in 36,-137; contains blocks 576,0,-2192 to 591,255,-2177), Region: (1,-5; contains chunks 32,-160 to 63,-129, blocks 512,0,-2560 to 1023,255,-2049)
+	Level time: 576000 game time, 576000 day time
+	Level dimension: 0
+	Level storage version: 0x04ABD - Anvil
+	Level weather: Rain time: 12756 (now: false), thunder time: 147619 (now: false)
+	Level game mode: Game mode: creative (ID 1). Hardcore: false. Cheats: true
+Stacktrace:
+	at net.minecraft.server.MinecraftServer.updateTimeLightAndEntities(MinecraftServer.java:703)
+	at net.minecraft.server.MinecraftServer.tick(MinecraftServer.java:614)
+	at net.minecraft.server.integrated.IntegratedServer.tick(IntegratedServer.java:118)
+	at net.minecraft.server.MinecraftServer.run(MinecraftServer.java:485)
+	at net.minecraft.server.MinecraftServer$2.run(MinecraftServer.java:752)
+
+-- System Details --
+Details:
+	Minecraft Version: 1.7.10
+	Operating System: Linux (amd64) version 6.17.7-3-cachyos
+	Java Version: 1.8.0_472, Azul Systems, Inc.
+	Java VM Version: OpenJDK 64-Bit Server VM (mixed mode), Azul Systems, Inc.
+	Memory: 2536831176 bytes (2419 MB) / 4008706048 bytes (3823 MB) up to 5726797824 bytes (5461 MB)
+	JVM Flags: 2 total; -Xms1G -Xmx6G
+	AABB Pool Size: 0 (0 bytes; 0 MB) allocated, 0 (0 bytes; 0 MB) used
+	IntCache: cache: 0, tcache: 16, allocated: 0, tallocated: 0
+	FML: MCP v9.05 FML v7.10.99.99 Minecraft Forge 10.13.4.1614 10 mods loaded, 10 mods active
+	States: 'U' = Unloaded 'L' = Loaded 'C' = Constructed 'H' = Pre-initialized 'I' = Initialized 'J' = Post-initialized 'A' = Available 'D' = Disabled 'E' = Errored
+	UCHIJAAAA	mcp{9.05} [Minecraft Coder Pack] (minecraft.jar) 
+	UCHIJAAAA	FML{7.10.99.99} [Forge Mod Loader] (recompiled_minecraft-1.7.10.jar) 
+	UCHIJAAAA	Forge{10.13.4.1614} [Minecraft Forge] (recompiled_minecraft-1.7.10.jar) 
+	UCHIJAAAA	NotEnoughItems{1.0.5.120} [Not Enough Items] (NotEnoughItems-1.7.10-1.0.5.120-universal.jar) 
+	UCHIJAAAA	CodeChickenCore{1.0.7.48} [CodeChicken Core] (minecraft.jar) 
+	UCHIJAAAA	tfc_coremod{0.89.1} [TFC[coremod]] (minecraft.jar) 
+	UCHIJAAAA	mymodid{master-packages-master+62dc771b1b-dirty} [MyMod] (mymodid-master-packages-master+62dc771b1b-dirty-dev.jar) 
+	UCHIJAAAA	terrafirmacraftplus{0.89.1} [TerraFirmaCraft+] ([1.7.10]TerraFirmaCraftPlus-0.89.1(1).jar) 
+	UCHIJAAAA	Waila{1.5.10} [Waila] (Waila-1.5.10_1.7.10.jar) 
+	UCHIJAAAA	hbm{1.0.27 BETA (5491)} [Hbm's Nuclear Tech] (HBM-NTM-.1.0.27_X5491.jar) 
+	GL info: ~~ERROR~~ RuntimeException: No OpenGL context found in the current thread.
+	NTM Modified recipes: 
+	Profiler Position: N/A (disabled)
+	Vec3 Pool Size: 0 (0 bytes; 0 MB) allocated, 0 (0 bytes; 0 MB) used
+	Player Count: 0 / 8; []
+	Type: Integrated Server (map_client.txt)
+	Is Modded: Definitely; Client brand changed to 'fml,forge'

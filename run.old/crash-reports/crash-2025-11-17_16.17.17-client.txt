@@ -1,0 +1,106 @@
+---- Minecraft Crash Report ----
+// Don't be sad. I'll do better next time, I promise!
+
+Time: 11/17/25, 4:17 PM
+Description: There was a severe problem during mod loading that has caused the game to fail
+
+cpw.mods.fml.common.LoaderException: java.lang.NoSuchMethodError: 'net.minecraft.creativetab.CreativeTabs com.hbm.creativetabs.TemplateTab.func_78025_a(java.lang.String)'
+	at Launch//cpw.mods.fml.common.LoadController.transition(LoadController.java:163)
+	at Launch//cpw.mods.fml.common.Loader.loadMods(Loader.java:544)
+	at Launch//cpw.mods.fml.client.FMLClientHandler.beginMinecraftLoading(FMLClientHandler.java:208)
+	at Launch//net.minecraft.client.Minecraft.startGame(Minecraft.java:522)
+	at Launch//net.minecraft.client.Minecraft.run(Minecraft.java:942)
+	at Launch//net.minecraft.client.main.Main.main(Main.java:164)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at System//net.minecraft.launchwrapper.Launch.rfb$realLaunch(Launch.java:250)
+	at System//net.minecraft.launchwrapper.Launch.launch(Launch.java:35)
+	at System//net.minecraft.launchwrapper.Launch.main(Launch.java:60)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at com.gtnewhorizons.retrofuturabootstrap.Main.main(Main.java:207)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at System//net.minecraftforge.gradle.GradleStartCommon.launch(GradleStartCommon.java:99)
+	at System//GradleStart.main(GradleStart.java:40)
+Caused by: java.lang.NoSuchMethodError: 'net.minecraft.creativetab.CreativeTabs com.hbm.creativetabs.TemplateTab.func_78025_a(java.lang.String)'
+	at Launch//com.hbm.creativetabs.TemplateTab.<init>(TemplateTab.java:13)
+	at Launch//com.hbm.main.MainRegistry.<clinit>(MainRegistry.java:152)
+	at java.base/java.lang.Class.forName0(Native Method)
+	at java.base/java.lang.Class.forName(Class.java:536)
+	at java.base/java.lang.Class.forName(Class.java:515)
+	at Launch//cpw.mods.fml.common.FMLModContainer.constructMod(FMLModContainer.java:440)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at System//com.google.common.eventbus.EventSubscriber.handleEvent(EventSubscriber.java:74)
+	at System//com.google.common.eventbus.SynchronizedEventSubscriber.handleEvent(SynchronizedEventSubscriber.java:47)
+	at System//com.google.common.eventbus.EventBus.dispatch(EventBus.java:322)
+	at System//com.google.common.eventbus.EventBus.dispatchQueuedEvents(EventBus.java:304)
+	at System//com.google.common.eventbus.EventBus.post(EventBus.java:275)
+	at Launch//cpw.mods.fml.common.LoadController.sendEventToModContainer(LoadController.java:212)
+	at Launch//cpw.mods.fml.common.LoadController.propogateStateMessage(LoadController.java:190)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at System//com.google.common.eventbus.EventSubscriber.handleEvent(EventSubscriber.java:74)
+	at System//com.google.common.eventbus.SynchronizedEventSubscriber.handleEvent(SynchronizedEventSubscriber.java:47)
+	at System//com.google.common.eventbus.EventBus.dispatch(EventBus.java:322)
+	at System//com.google.common.eventbus.EventBus.dispatchQueuedEvents(EventBus.java:304)
+	at System//com.google.common.eventbus.EventBus.post(EventBus.java:275)
+	at Launch//cpw.mods.fml.common.LoadController.distributeStateMessage(LoadController.java:119)
+	at Launch//cpw.mods.fml.common.Loader.loadMods(Loader.java:513)
+	... 16 more
+
+
+A detailed walkthrough of the error, its code path and all known details is as follows:
+---------------------------------------------------------------------------------------
+
+-- System Details --
+Details:
+	Minecraft Version: 1.7.10
+	Operating System: Linux (amd64) version 6.17.7-arch1-2
+	Java Version: 21.0.9, JetBrains s.r.o.
+	Java VM Version: OpenJDK 64-Bit Server VM (mixed mode, sharing), JetBrains s.r.o.
+	Memory: 882154632 bytes (841 MB) / 1073741824 bytes (1024 MB) up to 6442450944 bytes (6144 MB)
+	JVM Flags: 2 total; -Xms1G -Xmx6G
+	AABB Pool Size: 0 (0 bytes; 0 MB) allocated, 0 (0 bytes; 0 MB) used
+	IntCache: cache: 0, tcache: 0, allocated: 0, tallocated: 0
+	FML: MCP v9.05 FML v7.10.99.99 Minecraft Forge 10.13.4.1614 18 mods loaded, 18 mods active
+	States: 'U' = Unloaded 'L' = Loaded 'C' = Constructed 'H' = Pre-initialized 'I' = Initialized 'J' = Post-initialized 'A' = Available 'D' = Disabled 'E' = Errored
+	UC	mcp{9.05} [Minecraft Coder Pack] (minecraft.jar) 
+	UC	GTNHLib Core{0.6.37} [GTNHLib Core] (minecraft.jar) 
+	UC	FML{7.10.99.99} [Forge Mod Loader] (recompiled_minecraft-1.7.10.jar) 
+	UC	Forge{10.13.4.1614} [Minecraft Forge] (recompiled_minecraft-1.7.10.jar) 
+	UC	mymodid{master-packages-master+62dc771b1b-dirty} [MyMod] (mymodid-master-packages-master+62dc771b1b-dirty-dev.jar) 
+	UC	gtnhlib{0.6.37} [GTNH Lib] (GTNHLib-0.6.37-dev.jar) 
+	UC	unimixins{0.1.23} [UniMixins] (unimixins-0.1.23-dev.jar) 
+	UC	gtnhmixins{2.2.0} [UniMixins: GTNHMixins] (unimixins-0.1.23-dev.jar) 
+	UC	hodgepodge{2.6.91} [Hodgepodge] (Hodgepodge-2.6.91-dev.jar) 
+	UC	lwjgl3ify{2.1.14} [lwjgl3ify] (lwjgl3ify-2.1.14-dev.jar) 
+	UC	unimixins-mixin{0.1.23} [UniMixins: Mixin (UniMix)] (unimixins-0.1.23-dev.jar) 
+	UC	unimixins-compat{0.1.23} [UniMixins: Compatibility] (unimixins-0.1.23-dev.jar) 
+	UC	mixingasm{0.3} [UniMixins: Mixingasm] (unimixins-0.1.23-dev.jar) 
+	UC	spongemixins{2.0.1} [UniMixins: SpongeMixins] (unimixins-0.1.23-dev.jar) 
+	UC	mixinbooterlegacy{1.2.1} [UniMixins: MixinBooterLegacy] (unimixins-0.1.23-dev.jar) 
+	UC	gasstation{0.5.1} [UniMixins: GasStation] (unimixins-0.1.23-dev.jar) 
+	UC	mixinextras{0.1.23} [UniMixins: MixinExtras] (unimixins-0.1.23-dev.jar) 
+	UE	hbm{1.0.27 BETA (5491)} [Hbm's Nuclear Tech] (HBM-NTM-.1.0.27_X5491.jar) 
+	GL info: ' Vendor: 'NVIDIA Corporation' Version: '4.6.0 NVIDIA 580.105.08' Renderer: 'Quadro M6000/PCIe/SSE2'
+	CPU Threads: 8
+	Mixins in Stacktrace: 
+		cpw.mods.fml.common.LoadController:
+			mixins.gtnhmixins.json:LateMixinOrchestrationMixin from mod (unknown)
+			mixin.mixinbooterlegacy.json:LoadControllerMixin from mod (unknown)
+		net.minecraft.client.Minecraft:
+			mixins.hodgepodge.early.json:minecraft.MixinMinecraft_ClearRenderersWorldLeak from mod hodgepodge
+			mixins.hodgepodge.early.json:minecraft.MixinMinecraft_UnfocusedFullscreen from mod hodgepodge
+			mixins.hodgepodge.early.json:minecraft.MixinMinecraft_FixDuplicateSounds from mod hodgepodge
+			mixins.hodgepodge.early.json:minecraft.MixinMinecraft_FastBlockPlacing from mod hodgepodge
+			mixins.hodgepodge.early.json:minecraft.MixinMinecraft_UpdateKeys from mod hodgepodge
+			mixins.hodgepodge.early.json:minecraft.MixinMinecraft_ToggleDebugMessage from mod hodgepodge
+			mixins.hodgepodge.early.json:minecraft.MixinMinecraft_ResizableFullscreen from mod hodgepodge
+			mixins.hodgepodge.early.json:minecraft.profiler.MinecraftMixin from mod hodgepodge
+			mixins.lwjgl3ify.early.json:game.MixinMinecraftKeyBinding from mod lwjgl3ify
+			mixins.lwjgl3ify.early.json:game.MixinBorderlessWindow from mod lwjgl3ify
+			mixins.mymodid.early.json:MixinMinecraft_Example from mod mymodid
+		cpw.mods.fml.client.FMLClientHandler:
+			mixins.hodgepodge.early.json:memory.MixinFMLClientHandler from mod hodgepodge
